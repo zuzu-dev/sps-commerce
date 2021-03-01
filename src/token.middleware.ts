@@ -7,7 +7,7 @@ import * as jwt from 'jsonwebtoken';
 export class TokenMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: Function) {
     const authJsonWebToken = req.headers.authorization;
-    if (!req.baseUrl.startsWith('/subscriptions') && !req.baseUrl.startsWith('/sps')) {
+    if (!req.baseUrl.startsWith('/subscriptions') && !req.baseUrl.startsWith('/sps') && !req.baseUrl.startsWith('/orders')) {
       if (!authJsonWebToken) {
         throw new HttpException('Invalid Token', HttpStatus.UNAUTHORIZED)
       } else {

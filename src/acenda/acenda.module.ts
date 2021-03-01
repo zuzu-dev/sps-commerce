@@ -13,8 +13,7 @@ import { AcendaAdapter } from './models/acenda-adapter.model';
 
 
 @Module({
-  imports: [TypegooseModule.forFeature([AcendaAdapter]), AcendaClientModule, forwardRef(() => SubscriptionsModule),
-    OrdersModule],
+  imports: [TypegooseModule.forFeature([AcendaAdapter]), AcendaClientModule, forwardRef(() => SubscriptionsModule)],
   controllers: [AcendaController],
   providers: [AcendaService, AcendaAdapterService, AcendaOrdersService, AcendaProductsService],
   exports: [AcendaService, AcendaClientModule, AcendaAdapterService, AcendaOrdersService, AcendaProductsService]

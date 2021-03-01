@@ -4,6 +4,7 @@ import { SpsService } from './sps.service';
 
 @Module({
   controllers: [SpsController],
-  providers: [SpsService]
+  providers: [SpsService],
+  exports: [SpsService]
 })
 export class SpsModule {}

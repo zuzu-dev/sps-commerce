@@ -11,8 +11,14 @@ export class SpsController {
         return "Success!"
     }
 
-    @Post('access-token') 
-    getAccessToken() {
-        return this.spsService.getAccessToken()
+    @Get('purchase-orders')
+    async getTransactions() {
+        return await this.spsService.get('orders');
+    }
+
+    @Post('test')
+    async test() {
+        var obj = {name: "Super", Surname: "Man", age: 23};
+        return await this.spsService.json2xml(obj);
     }
 }
